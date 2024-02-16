@@ -1,8 +1,8 @@
 import {
-  CollectionFactory,
   Collection,
+  CollectionFactory,
   NoOpCollection
-} from "./collectionFactory"
+} from "./CollectionFactory"
 
 export enum ContractAddresses {
   Azuki = '0xED5AF388653567Af2F388E6224dC7C4b3241C544',
@@ -19,8 +19,10 @@ export interface PointsResult {
 export class EmblemEngine {
   constructor() {}
 
-  getPoints(contractAddress: string, id: number): PointsResult {
-    const collection: Collection = CollectionFactory.getCollectionProperties(contractAddress)
+  getPoints(contractAddress: ContractAddresses, id: number): PointsResult {
+    // const data = await fs.promises.readFile('./assets/azuki.json', 'utf-8')
+    // const jsonObject = JSON.parse(data)
+    const collection: Collection = CollectionFactory.get(contractAddress)
     if (collection instanceof NoOpCollection) {
       return {
         success: false,

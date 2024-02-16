@@ -1,6 +1,10 @@
-import { Collection } from "../collectionFactory"
+import { Collection } from "../CollectionFactory"
 
-export class ElementalProperties implements Collection {
+export class Elemental implements Collection {
+    getEmblemPoints(id: number): Promise<number> {
+      throw new Error("Method not implemented.")
+    }
+
     idIsValid(id: number): boolean {
         if (id > 19999 || id < 0) {
             return false
