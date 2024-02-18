@@ -2,7 +2,7 @@ import { Collection } from "../CollectionFactory"
 
 export class Elemental implements Collection {
     getEmblemPoints(id: number): Promise<number> {
-      throw new Error("Method not implemented.")
+      return Promise.resolve(0)
     }
 
     idIsValid(id: number): boolean {

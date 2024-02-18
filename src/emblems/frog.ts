@@ -1,8 +1,8 @@
 import { AzukiAttributes } from "../collections/azuki";
 import { Emblem } from "./emblem";
 
-export class RedPanda implements Emblem {
-  RedPandaString = "red panda"
+export class Frog implements Emblem {
+  FrogString = "frog"
 
   calculatePoints(attributes: AzukiAttributes): number {
     const count = this.getCount(attributes)
@@ -25,7 +25,7 @@ export class RedPanda implements Emblem {
   getCount(attributes: AzukiAttributes): number {
     var count = 0;
     Object.entries(attributes).forEach(([_, value]) => {
-      if (value.toLowerCase().includes(this.RedPandaString)) {
+      if (value.toLowerCase().includes(this.FrogString)) {
         count ++
       }
     });

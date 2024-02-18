@@ -6,7 +6,7 @@ describe('Red Panda Emblem', () => {
     const attributes = {
     } as AzukiAttributes
 
-    const result = RedPanda.calculatePoints(attributes)
+    const result = new RedPanda().calculatePoints(attributes)
 
     expect(result).toEqual(0)
   })
@@ -16,7 +16,7 @@ describe('Red Panda Emblem', () => {
       Clothing: "RED PANDA T-SHIRT"
     } as AzukiAttributes
 
-    const result = RedPanda.calculatePoints(attributes)
+    const result = new RedPanda().calculatePoints(attributes)
 
     expect(result).toEqual(100)
   })
@@ -27,7 +27,7 @@ describe('Red Panda Emblem', () => {
       Headgear: "RED PANDA BASEBALL CAP"
     } as AzukiAttributes
 
-    const result = RedPanda.calculatePoints(attributes)
+    const result = new RedPanda().calculatePoints(attributes)
 
     expect(result).toEqual(400)
   })
@@ -39,7 +39,7 @@ describe('Red Panda Emblem', () => {
       Neck: "RED PANDA HEADPHONES"
     } as AzukiAttributes
 
-    const result = RedPanda.calculatePoints(attributes)
+    const result = new RedPanda().calculatePoints(attributes)
 
     expect(result).toEqual(1000)
   })
@@ -52,7 +52,7 @@ describe('Red Panda Emblem', () => {
       Ear: "RED PANDA"
     } as AzukiAttributes
 
-    const result = RedPanda.calculatePoints(attributes)
+    const result = new RedPanda().calculatePoints(attributes)
 
     expect(result).toEqual(12000)
   })

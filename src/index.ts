@@ -19,9 +19,7 @@ export interface PointsResult {
 export class EmblemEngine {
   constructor() {}
 
-  getPoints(contractAddress: ContractAddresses, id: number): PointsResult {
-    // const data = await fs.promises.readFile('./assets/azuki.json', 'utf-8')
-    // const jsonObject = JSON.parse(data)
+  async getPoints(contractAddress: ContractAddresses, id: number): Promise<PointsResult> {
     const collection: Collection = CollectionFactory.get(contractAddress)
     if (collection instanceof NoOpCollection) {
       return {
@@ -31,17 +29,16 @@ export class EmblemEngine {
     }
 
     if (collection.idIsValid(id)) {
-      return {
+      const emblemPoints = await collection.getEmblemPoints(id)
+      return Promise.resolve({
         success: true,
-        points: collection.getBasePoints()
-      }
+        points: collection.getBasePoints() + emblemPoints
+      })
     } else {
-      return {
+      return Promise.resolve({
         success: false,
         message: 'id does not exist'
-      }
+      })
     }
   } 
 }
-
-console.log("hello");
