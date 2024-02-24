@@ -1,4 +1,4 @@
-import { Collection } from "../CollectionFactory"
+import { Collection } from "../collectionFactory"
 
 export class Elemental implements Collection {
     getEmblemPoints(id: number): Promise<number> {

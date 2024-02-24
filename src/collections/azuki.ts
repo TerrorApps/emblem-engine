@@ -1,4 +1,4 @@
-import { Collection } from "../CollectionFactory"
+import { Collection } from "../collectionFactory"
 import { Emblem } from "../emblems/emblem"
 import { getAzukiById } from "../util/getAzukiById"
 import {

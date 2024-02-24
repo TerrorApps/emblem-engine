@@ -2,7 +2,7 @@ import {
   Collection,
   CollectionFactory,
   NoOpCollection
-} from "./CollectionFactory"
+} from "./collectionFactory"
 
 export enum ContractAddresses {
   Azuki = '0xED5AF388653567Af2F388E6224dC7C4b3241C544',
